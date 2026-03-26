@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ishikawa Burger</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0d0d;
+  color: #f5c518;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 15px;
+  background: #000;
+  border-bottom: 2px solid #f5c518;
+}
+
+header img {
+  width: 70px;
+  border-radius: 50%;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  background: #111;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.tab.active {
+  border-bottom: 2px solid #f5c518;
+  font-weight: bold;
+}
+
+/* CONTENT */
+.content {
+  display: none;
+  padding: 15px;
+}
+
+.content.active {
+  display: block;
+}
+
+/* CARDS */
+.card {
+  background: #1a1a1a;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* ACCORDION HEADER */
+.accordion {
+  padding: 15px;
+  cursor: pointer;
+  background: #222;
+  font-weight: bold;
+}
+
+/* ACCORDION CONTENT */
+.panel {
+  display: none;
+  padding: 10px 15px;
+  background: #111;
+}
+
+.panel p {
+  margin: 6px 0;
+}
+
+/* CHECKLIST */
+label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 6px 0;
+  background: #111;
+  border-radius: 6px;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 10px;
+  accent-color: #f5c518;
+}
+
+.checked {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="https://i.imgur.com/MexQdWt.png">
+  <h2>Ishikawa Burger</h2>
+</header>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" onclick="openTab(0)">Checklist</div>
+  <div class="tab" onclick="openTab(1)">Smash</div>
+  <div class="tab" onclick="openTab(2)">Artesanal</div>
+</div>
+
+<!-- CHECKLIST -->
+<div class="content active">
+
+  <div class="card">
+    <div class="accordion">Pães</div>
+    <div class="panel">
+      <label><input type="checkbox"><span>Brioche</span></label>
+      <label><input type="checkbox"><span>Brioche com Gergelim</span></label>
+      <label><input type="checkbox"><span>Australiano</span></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Carnes</div>
+    <div class="panel">
+      <label><input type="checkbox"><span>Patinho ou Acém 60%</span></label>
+      <label><input type="checkbox"><span>Costela/Fraldinha/Vazio 40%</span></label>
+      <label><input type="checkbox"><span>Peito de Frango</span></label>
+      <label><input type="checkbox"><span>Bacon em tiras</span></label>
+      <label><input type="checkbox"><span>Bacon/Picar</span></label>
+      <label><input type="checkbox"><span>Calabresa</span></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Queijos</div>
+    <div class="panel">
+      <label><input type="checkbox"><span>Prato Fatiado</span></label>
+      <label><input type="checkbox"><span>Cheddar Fatiado</span></label>
+      <label><input type="checkbox"><span>Mussarela Fatiada</span></label>
+      <label><input type="checkbox"><span>Mussarela em Barra</span></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Vegetais</div>
+    <div class="panel">
+      <label><input type="checkbox"><span>Alface Americana</span></label>
+      <label><input type="checkbox"><span>Tomate</span></label>
+      <label><input type="checkbox"><span>Cebola Roxa</span></label>
+      <label><input type="checkbox"><span>Picles Heinz</span></label>
+      <label><input type="checkbox"><span>Cebola</span></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Mercado</div>
+    <div class="panel">
+      <label><input type="checkbox"><span>Ovos</span></label>
+      <label><input type="checkbox"><span>Maionese / Heinz</span></label>
+      <label><input type="checkbox"><span>Ketchup</span></label>
+      <label><input type="checkbox"><span>Farinha Panko</span></label>
+      <label><input type="checkbox"><span>Farinha de Trigo</span></label>
+      <label><input type="checkbox"><span>Onion Rings</span></label>
+      <label><input type="checkbox"><span>Sal Grosso</span></label>
+      <label><input type="checkbox"><span>Molho Barbecue</span></label>
+      <label><input type="checkbox"><span>Catupiry</span></label>
+      <label><input type="checkbox"><span>Cheddar Bisnaga</span></label>
+      <label><input type="checkbox"><span>Leite</span></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Itens Variados</div>
+    <div class="panel">
+      <label><input type="checkbox"><span>Espátulas</span></label>
+      <label><input type="checkbox"><span>Pinças inox</span></label>
+      <label><input type="checkbox"><span>Facas profissionais</span></label>
+      <label><input type="checkbox"><span>Tábuas de corte</span></label>
+      <label><input type="checkbox"><span>Bandejas inox</span></label>
+      <label><input type="checkbox"><span>Grampeador</span></label>
+      <label><input type="checkbox"><span>Potes</span></label>
+      <label><input type="checkbox"><span>Bisnagas</span></label>
+      <label><input type="checkbox"><span>Prensa Smash</span></label>
+      <label><input type="checkbox"><span>Balança</span></label>
+      <label><input type="checkbox"><span>Panelas molhos</span></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Embalagens</div>
+    <div class="panel">
+      <label><input type="checkbox"><span>Papel Manteiga</span></label>
+      <label><input type="checkbox"><span>Saco Kraft</span></label>
+      <label><input type="checkbox"><span>Embalagem Batata</span></label>
+    </div>
+  </div>
+
+</div> <!-- fecha content Checklist -->
+
+<!-- SMASH -->
+<div class="content">
+
+  <div class="card">
+    <div class="accordion">Smash Simples</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Barbecue</p>
+      <p>Carne 100gr</p>
+      <p>Queijo Cheddar</p>
+      <p>Cebola Caramelizada</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Smash Salada</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Maionese do Cheff</p>
+      <p>Carne 100gr</p>
+      <p>Mussarela</p>
+      <p>Alface</p>
+      <p>Tomate</p>
+      <p>Cebola na Chapa</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Smash Bacon</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Barbecue</p>
+      <p>Carne 100gr</p>
+      <p>Queijo Prato</p>
+      <p>2x Bacon</p>
+      <p>Maionese do Cheff</p>
+      <p>Picles</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Smash Duplo</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Barbecue</p>
+      <p>2x Carne 100gr</p>
+      <p>2x Queijo Cheddar</p>
+      <p>2x Bacon</p>
+      <p>Maionese do Cheff</p>
+      <p>Cebola Caramelizada</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Smash Triplo</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Maionese do Cheff</p>
+      <p>Hambúrguer 180gr</p>
+      <p>Muçarela Empanada</p>
+      <p>Cheddar Creme</p>
+      <p>Bacon Picado</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Smash Especial</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Maionese do Cheff</p>
+      <p>Carne 100gr</p>
+      <p>Molho Especial</p>
+      <p>Alface em Tiras</p>
+      <p>Crispy de Bacon</p>
+      <p>Picles</p>
+    </div>
+  </div>
+
+</div> <!-- fecha content Smash -->
+
+<!-- ARTESANAL -->
+<div class="content">
+
+  <div class="card">
+    <div class="accordion">Start</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Carne 180gr</p>
+      <p>Queijo Prato</p>
+      <p>Maionese do Cheff</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Universitário</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Maionese do Cheff</p>
+      <p>Carne 180gr</p>
+      <p>Queijo Prato</p>
+      <p>Cebola Chapeada</p>
+      <p>Tomate Chapeado</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Salad</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Molho do Cheff</p>
+      <p>Carne 180gr</p>
+      <p>Queijo Prato</p>
+      <p>Alface</p>
+      <p>Tomate</p>
+      <p>Cebola</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Smokey King</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Barbecue</p>
+      <p>Carne 180gr</p>
+      <p>Bacon Picado</p>
+      <p>Calabresa Picada</p>
+      <p>Cebola Chapeada</p>
+      <p>2x Mussarela Chapeada</p>
+      <p>Maionese do Cheff</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Mozza Boom</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Maionese do Cheff</p>
+      <p>Hambúrguer 180gr</p>
+      <p>Muçarela Empanada</p>
+      <p>Cheddar Creme</p>
+      <p>Bacon Picado</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="accordion">Crispy Royale</div>
+    <div class="panel">
+      <p>Pão Brioche</p>
+      <p>Maionese do Cheff</p>
+      <p>Hambúrguer 180gr</p>
+      <p>Muçarela</p>
+      <p>Catupiry Empanado</p>
+      <p>Molho do Cheff</p>
+      <p>Bacon Crispy</p>
+    </div>
+  </div>
+
+</div> <!-- fecha content Artesanal -->
+
+<script>
+/* TABS */
+function openTab(index) {
+  document.querySelectorAll('.content').forEach((c, i) => {
+    c.classList.toggle('active', i === index);
+  });
+
+  document.querySelectorAll('.tab').forEach((t, i) => {
+    t.classList.toggle('active', i === index);
+  });
+}
+
+/* ACCORDION */
+document.querySelectorAll('.accordion').forEach(acc => {
+  acc.addEventListener('click', () => {
+    const panel = acc.nextElementSibling;
+    panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+  });
+});
+
+/* CHECKLIST */
+document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('change', function() {
+    this.nextElementSibling?.classList.toggle('checked', this.checked);
+  });
+});
+</script>
+
+</body>
+</html>
